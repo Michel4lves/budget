@@ -19,7 +19,12 @@
     margin: 0 1em;
 }
 
-.social_list li:hover {
+.social_list li a {
+    text-decoration: none;
+    color: var(--color-bg);
+}
+
+.social_list a:hover {
     color: #a9cc34;
 }
 

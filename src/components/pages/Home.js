@@ -7,7 +7,7 @@ export default function Home() {
         <section className={styles.home_container} >
             <h1>Bem vindo ao <span>Budget</span></h1>
             <p>A melhor maneira de gerenciar seus projetos!</p>
-            <LinkButton to='/newproject' text='Criar Projeto' />
+            <LinkButton to='/budget/newproject' text='Criar Projeto' />
             <img src={banner} alt="imagem_banner"/>
         </section>
     )

@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithubSquare, FaWhatsappSquare, FaAt } from 'react-icons/fa'
+import { FaLinkedin, FaGithubSquare } from 'react-icons/fa'
 
 import styles from './layoutCss/Footer.module.css'
 
@@ -7,16 +7,14 @@ export default function Footer() {
         <footer className={styles.footer_tag}>
             <ul className={styles.social_list}>
                 <li>
-                    <FaGithubSquare />
+                    <a href="https://github.com/Michel4lves" target="_blank" rel="noopener noreferrer">
+                        <FaGithubSquare />
+                    </a>
                 </li>
                 <li>
-                    <FaLinkedin />
-                </li>
-                <li>
-                    <FaWhatsappSquare />
-                </li>
-                <li>
-                    <FaAt />
+                    <a href="https://www.linkedin.com/in/michel-alves-892457232/" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin />
+                    </a>
                 </li>
             </ul>
             <p className={styles.copy_right}><span>Budget</span> &copy; 2023</p>

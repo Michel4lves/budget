@@ -1,47 +1,48 @@
 {
   "projects": [
     {
-      "name": "Projeto Teste 02",
-      "budget": "5000",
       "category": {
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 4000,
+      "name": "Criação de site",
+      "budget": "2000",
+      "cost": 1000,
       "services": [
         {
-          "name": "serviço teste 01",
-          "cost": "3000",
-          "description": "faz isso",
-          "id": "35938131-e4b3-4d09-956a-75d934164db1"
-        },
-        {
-          "name": "serviço teste 02",
+          "name": "Contratar designer",
           "cost": "1000",
-          "description": "também faz isso",
-          "id": "e4c979e2-3e37-483b-bad8-83c659c71993"
+          "description": "Planejar o desigb do site",
+          "id": "2a0f12a6-264c-4844-b0e7-2bda3f23f95f"
         }
       ],
       "id": 1
     },
     {
-      "name": "projeto teste 03",
-      "budget": "15000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 2
-    },
-    {
-      "name": "Projeto Teste 04",
-      "budget": "25000",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
+      "budget": "5000",
+      "name": "Criação do web site",
+      "cost": 2800,
+      "services": [
+        {
+          "name": "Programação do site",
+          "cost": "2800",
+          "description": "Contrato de programador para construção do site",
+          "id": "f43a9b6b-8dc9-4703-8837-bf621b67846e"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "name": "Montagem da loja",
+      "budget": "50000",
       "cost": 0,
       "services": [],
       "id": 3

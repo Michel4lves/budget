@@ -13,16 +13,20 @@ export default function Navbar() {
                 </Link>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <Link to="/">HOME</Link>
+                        <Link to="/budget/">HOME</Link>
+                        {/* <Link to="/">HOME</Link> */}
                     </li>
                     <li className={styles.item}>
-                        <Link to="/projects">PROJETOS</Link>
+                        <Link to="/budget/projects">PROJETOS</Link>
+                        {/* <Link to="/projects">PROJETOS</Link> */}
                     </li>
                     <li className={styles.item}>
-                        <Link to="/company">EMPRESA</Link>
+                        <Link to="/budget/company">EMPRESA</Link>
+                        {/* <Link to="/company">EMPRESA</Link> */}
                     </li>
                     <li className={styles.item}>
-                        <Link to="/contact">CONTATO</Link>
+                        <Link to="/budget/contact">CONTATO</Link>
+                        {/* <Link to="/contact">CONTATO</Link> */}
                     </li>
                 </ul>
             </Container>

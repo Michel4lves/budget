@@ -15,6 +15,7 @@ export default function Projects() {
     const [projects, setProjects] = useState([])
     const [projectMessage, setProjectsMessage] = useState('')
 
+    
     useEffect(() => {
         setTimeout(() => {
             fetch('http://localhost:5000/projects', {
@@ -57,7 +58,7 @@ export default function Projects() {
         <div className={styles.project_container}>
             <div className={styles.title_container}>
                 <h1>Meus Projetos</h1>
-                <LinkButton to='/newproject' text='Criar Projeto' />
+                <LinkButton to='/budget/newproject' text='Criar Projeto' />
             </div>
             {message && <Message type="success" msg={message} />}
             {projectMessage && <Message type="success" msg={projectMessage} />}
