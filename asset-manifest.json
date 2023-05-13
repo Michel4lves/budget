@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/budget/static/css/main.555ed0e7.css",
-    "main.js": "/budget/static/js/main.bc49ca3e.js",
-    "static/media/calculator.png": "/budget/static/media/calculator.308e7a8d555259b70e90.png",
-    "static/media/BudgetLogo.png": "/budget/static/media/BudgetLogo.93b6af59e938322d67b4.png",
-    "static/media/blue-spinner.gif": "/budget/static/media/blue-spinner.f53aa23fcdfc7bd67f43.gif",
-    "index.html": "/budget/index.html",
-    "main.555ed0e7.css.map": "/budget/static/css/main.555ed0e7.css.map",
-    "main.bc49ca3e.js.map": "/budget/static/js/main.bc49ca3e.js.map"
+    "main.css": "/static/css/main.555ed0e7.css",
+    "main.js": "/static/js/main.a4c8fe47.js",
+    "static/media/calculator.png": "/static/media/calculator.308e7a8d555259b70e90.png",
+    "static/media/BudgetLogo.png": "/static/media/BudgetLogo.93b6af59e938322d67b4.png",
+    "static/media/blue-spinner.gif": "/static/media/blue-spinner.f53aa23fcdfc7bd67f43.gif",
+    "index.html": "/index.html",
+    "main.555ed0e7.css.map": "/static/css/main.555ed0e7.css.map",
+    "main.a4c8fe47.js.map": "/static/js/main.a4c8fe47.js.map"
   },
   "entrypoints": [
     "static/css/main.555ed0e7.css",
-    "static/js/main.bc49ca3e.js"
+    "static/js/main.a4c8fe47.js"
   ]
 }
