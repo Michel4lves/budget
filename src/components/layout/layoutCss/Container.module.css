@@ -1,5 +1,5 @@
 .container {
-    width: 1200px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -7,7 +7,8 @@
 }
 
 .min_height {
-    min-height: 70vh;
+    width: 1200px;
+    min-height: 70%;
 }
 
 .start {
@@ -19,3 +20,6 @@
     justify-content: flex-start;
 }
 
+.nav {
+    width: 1200px;
+}

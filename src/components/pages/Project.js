@@ -21,6 +21,7 @@ export default function Project() {
     const [message, setMessage] = useState()
     const [type, setType] = useState()
 
+    // GET PROJECT
     useEffect(() => {
         setTimeout(() => {
             fetch(`http://localhost:5000/projects/${id}`, {
@@ -38,10 +39,12 @@ export default function Project() {
         }, 500)
     }, [id])
 
+    // TOGGLE BUTTON FOR EDIT PROJECT
     function toggleProjectForm() {
         setShowProjectForm(!showProjectForm)
     }
 
+    // EDIT PROJECT
     function editPost(project) {
         setMessage('')
         // budget validation
@@ -68,10 +71,12 @@ export default function Project() {
         .catch((err) => console.log(err))
     }
 
+    // TOGGLE BUTTON FOR EDIT SERVICE
     function toggleServiceForm() {
         setShowServiceForm(!showServiceForm)
     }
 
+    // ADD SERVICE
     function createService() {
         setMessage('')
         
@@ -111,6 +116,7 @@ export default function Project() {
         .catch((err) => console.log(err))
     }
 
+    // REMOVE SERVICE
     function removeService(id, cost) {
         setMessage('')
 
@@ -151,20 +157,14 @@ export default function Project() {
                             <button className={styles.btn} onClick={toggleProjectForm}>{!showProjectForm ? "Editar Projeto" : "Fechar"}</button>
                             {!showProjectForm ? (
                                 <div className={styles.project_info}>
-                                    <p>
-                                        <span>Categoria:</span> {project.category.name}
-                                    </p>
-                                    <p>
-                                        <span>Total do Orçamento:</span> R${project.budget}
-                                    </p>
-                                    <p>
-                                        <span>Total Utilizado:</span> R${project.cost}
-                                    </p>
+                                    <p><span>Categoria:</span> {project.category.name}</p>
+                                    <p><span>Total do Orçamento:</span> R${project.budget}</p>
+                                    <p><span>Total Utilizado:</span> R${project.cost}</p>
                                 </div>
                             ) : (
                                 <div className={styles.project_info}>
                                     <ProjectForm handleSubmit={editPost} btnText="Salvar Edição" projectData={project} />
-                                </div>    
+                                </div>
                             )}
                         </div>
                         <div className={styles.service_form_container}>
@@ -204,12 +204,3 @@ export default function Project() {
         </>
     )
 }
-
-
-
-
-
-
-// ativar scroll do container
-
-// msg não aparece
