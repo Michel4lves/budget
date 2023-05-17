@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/budget/static/css/main.46173e4c.css",
+    "main.css": "/budget/static/css/main.287754cf.css",
     "main.js": "/budget/static/js/main.d35a0803.js",
     "static/media/calculator.png": "/budget/static/media/calculator.308e7a8d555259b70e90.png",
     "static/media/BudgetLogo.png": "/budget/static/media/BudgetLogo.93b6af59e938322d67b4.png",
     "static/media/blue-spinner.gif": "/budget/static/media/blue-spinner.f53aa23fcdfc7bd67f43.gif",
     "index.html": "/budget/index.html",
-    "main.46173e4c.css.map": "/budget/static/css/main.46173e4c.css.map",
+    "main.287754cf.css.map": "/budget/static/css/main.287754cf.css.map",
     "main.d35a0803.js.map": "/budget/static/js/main.d35a0803.js.map"
   },
   "entrypoints": [
-    "static/css/main.46173e4c.css",
+    "static/css/main.287754cf.css",
     "static/js/main.d35a0803.js"
   ]
 }
