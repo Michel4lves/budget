@@ -1,29 +1,41 @@
-.about_container {
+.contact_container {
     width: 850px;
     margin: 0 auto;
     padding: 3em;
 }
 
-.about_container h1 {
+.contact_container h1 {
     margin-bottom: 0.5em;
 }
 
-.about_container p {
+h1:nth-child(1) {
+    text-align: left;
+}
+
+h1:nth-child(2) {
+    text-align: center;
+}
+
+h1:nth-child(3) {
+    text-align: right;
+}
+
+.contact_container p {
     color: var(--color-msg);
     margin-bottom: 0.5em;
 }
 
-.about_container p span {
+.contact_container p span {
     color: var(--color-hl);
     font-weight: bold;
 }
 
 @media (max-width: 576px) {
-    .about_container h1 {
+    .contact_container h1 {
         font-size: 1em;
     }
     
-    .about_container p {
+    .contact_container p {
         font-size: 0.8em;
     }
 }
