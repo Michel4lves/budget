@@ -4,8 +4,11 @@
     padding: 0.5em 1em;
     text-decoration: none;
     transition: 0.5s;
-    width: 150px;
-    text-align: center;
+    width: 160px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:hover {
