@@ -43,13 +43,19 @@
       },
       "name": "Montagem da loja",
       "budget": "50000",
-      "cost": 10000,
+      "cost": 11000,
       "services": [
         {
           "name": "Mesas de escritório",
           "cost": "10000",
           "description": "Compra de mesas de escritório",
           "id": "ba0e13ab-7be5-4777-ab12-5c5b0a7747da"
+        },
+        {
+          "name": "Papelaria",
+          "cost": "1000",
+          "description": "Compra de material de escritório",
+          "id": "1e025352-7454-4eb0-8b34-287df8ccb46a"
         }
       ],
       "id": 3

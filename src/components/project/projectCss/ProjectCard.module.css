@@ -62,9 +62,7 @@
 .project_card_actions a,
 .project_card_actions button {
     text-decoration: none;
-    /* border: none; */
     border: 1px solid var(--color-txt);
-    /* background-color: var(--color-bg); */
     background-color: #fff;
     color: var(--color-txt);
     font-size: 0.9em;
@@ -85,4 +83,35 @@
 
 .project_card_actions svg {
     margin-right: 0.5em;
+}
+
+@media (max-width: 1200px) {
+    .project_card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 960px) {
+    .project_card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 720px) {
+    .project_card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .project_card h4 {
+        font-size: 1em;
+    }
+    .project_card p {
+        font-size: 0.8em;
+    }
+    .project_card_actions a,
+    .project_card_actions button {
+    font-size: 0.8em;
+    }
 }

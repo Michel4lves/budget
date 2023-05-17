@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--color-txt);
     padding: 1em;
     position: relative;
@@ -29,4 +30,21 @@
 
 .logo {
     width: 5em;
+}
+
+@media (max-width: 576px) {
+    .logo {
+        width: 4em;
+        margin-top: 1em;
+    }
+}
+
+@media (max-width: 420px) {
+    .logo {
+        width: 3em;
+    }
+
+    .item a {
+        font-size: 0.8em;
+    }
 }

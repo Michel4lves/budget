@@ -10,3 +10,16 @@
     width: 100%;
 }
 
+@media (max-width: 720px) {
+    .title_container {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .title_container h1 {
+        font-size: 1.8em;
+    }
+    
+}

@@ -12,3 +12,12 @@
     color: var(--color-msg);
 }
 
+@media (max-width: 576px) {
+    .newproject_container h1 {
+        font-size: 1.8em;
+    }
+    
+    .newproject_container p {
+        font-size: 0.8em;
+    }
+}

@@ -38,7 +38,7 @@
     cursor: pointer;
     max-height: 40px;
     border: none;
-    min-width: 150px;
+    width: 150px;
 }
 
 .btn:hover {
@@ -47,4 +47,32 @@
 
 .project_info {
     width: 100%;
+}
+
+@media (max-width: 720px) {
+    .details_container,
+    .service_form_container {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .project_details h1 {
+        font-size: 1.5em;
+    }
+
+    .project_details h2 {
+        font-size: 1.2em;
+    }
+    
+    .project_details p {
+        font-size: 0.8em;
+    }
+
+    .btn {
+        padding: 0.5em;
+        font-size: 0.8em;
+        width: 130px;
+    }
 }

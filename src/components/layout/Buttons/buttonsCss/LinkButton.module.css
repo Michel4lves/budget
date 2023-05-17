@@ -4,8 +4,19 @@
     padding: 0.5em 1em;
     text-decoration: none;
     transition: 0.5s;
+    width: 150px;
+    text-align: center;
 }
 
 .btn:hover {
     color: var(--color-hl);
+}
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 0.5em 0.5em;
+        width: 100px;
+        font-size: 0.8em;
+    }
+    
 }

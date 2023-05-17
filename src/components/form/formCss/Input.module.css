@@ -18,3 +18,13 @@
 .form_control input::placeholder {
     color: var(--color-msg);
 }
+
+@media (max-width: 576px) {
+    .form_control label {
+        margin-bottom: 0.4em;
+    }
+    
+    .form_control input {
+        padding: 0.4em;
+    }
+}

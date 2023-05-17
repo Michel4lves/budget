@@ -18,3 +18,12 @@
     font-weight: bold;
 }
 
+@media (max-width: 576px) {
+    .about_container h1 {
+        font-size: 1em;
+    }
+    
+    .about_container p {
+        font-size: 0.8em;
+    }
+}

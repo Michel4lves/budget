@@ -11,3 +11,11 @@
 .btn:hover {
     color: var(--color-hl);
 }
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 0.5em;
+        font-size: 0.8em;
+    }
+    
+}

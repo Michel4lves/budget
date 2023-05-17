@@ -41,3 +41,13 @@
     font-weight: bold;
     color:  var(--color-hl);
 }
+
+@media (max-width: 576px) {
+    .social_list li {
+        margin: 0 0.5em;
+    }
+
+    .copy_right {
+        margin-top: 1em;
+    }
+}
