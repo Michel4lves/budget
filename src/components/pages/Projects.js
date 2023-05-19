@@ -7,6 +7,7 @@ import LinkButton from "../layout/Buttons/LinkButton";
 import ProjectCard from "../project/ProjectCard";
 import Loading from "../layout/Loading";
 
+import dbStatic from '../../dbStatic.json'
 
 import styles from './pagesCss/Projects.module.css'
 
@@ -15,23 +16,31 @@ export default function Projects() {
     const [projects, setProjects] = useState([])
     const [projectMessage, setProjectsMessage] = useState('')
 
-    
+    // FOR STATIC GITHUB PAGES
     useEffect(() => {
         setTimeout(() => {
-            fetch('http://localhost:5000/projects', {
-                method: 'GET',
-                headers: {
-                    'content-Type': 'application/json'
-                }
-            })
-            .then((resp) => resp.json())
-            .then((data) => {
-                setProjects(data)
-                setRemoveLoading(true)
-            })
-            .catch((err) => console.log(err))
+            setProjects(dbStatic.projects)
+            setRemoveLoading(true)
         }, 500)
-    }, [])
+    }, []);
+
+    // FOR JSON HTTP
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         fetch('http://localhost:5000/projects', {
+    //             method: 'GET',
+    //             headers: {
+    //                 'content-Type': 'application/json'
+    //             }
+    //         })
+    //         .then((resp) => resp.json())
+    //         .then((data) => {
+    //             setProjects(data)
+    //             setRemoveLoading(true)
+    //         })
+    //         .catch((err) => console.log(err))
+    //     }, 500)
+    // }, [])
 
     const location = useLocation()
     let message = ''

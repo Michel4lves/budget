@@ -11,6 +11,8 @@ import ProjectForm from '../project/ProjectForm';
 import ServiceForm from '../service/ServiceForm';
 import ServiceCard from '../service/serviceCard';
 
+import dbStatic from '../../dbStatic.json'
+
 export default function Project() {
 
     const { id } = useParams()
@@ -22,22 +24,30 @@ export default function Project() {
     const [type, setType] = useState()
 
     // GET PROJECT
+    // FOR STATIC GITHUB PAGES
     useEffect(() => {
         setTimeout(() => {
-            fetch(`http://localhost:5000/projects/${id}`, {
-                method: 'GET',
-                headers: {
-                    'content-Type': 'application/json'
-                }
-            })
-            .then((resp) => resp.json())
-            .then((data) => {
-                setProject(data)
-                setServices(data.services)
-            })
-            .catch((err) => console.log(err))
+            setProject(dbStatic.projects.id)
         }, 500)
-    }, [id])
+    }, []);
+
+    // FOR JSON HTTP
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         fetch(`http://localhost:5000/projects/${id}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'content-Type': 'application/json'
+    //             }
+    //         })
+    //         .then((resp) => resp.json())
+    //         .then((data) => {
+    //             setProject(data)
+    //             setServices(data.services)
+    //         })
+    //         .catch((err) => console.log(err))
+    //     }, 500)
+    // }, [id])
 
     // TOGGLE BUTTON FOR EDIT PROJECT
     function toggleProjectForm() {

@@ -1,0 +1,82 @@
+{
+  "projects": [
+    {
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "name": "Criação de site",
+      "budget": "2000",
+      "cost": 1000,
+      "services": [
+        {
+          "name": "Contratar designer",
+          "cost": "1000",
+          "description": "Planejar o desigb do site",
+          "id": "2a0f12a6-264c-4844-b0e7-2bda3f23f95f"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "budget": "5000",
+      "name": "Criação do web site",
+      "cost": 2800,
+      "services": [
+        {
+          "name": "Programação do site",
+          "cost": "2800",
+          "description": "Contrato de programador para construção do site",
+          "id": "f43a9b6b-8dc9-4703-8837-bf621b67846e"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "name": "Montagem da loja",
+      "budget": "50000",
+      "cost": 11000,
+      "services": [
+        {
+          "name": "Mesas de escritório",
+          "cost": "10000",
+          "description": "Compra de mesas de escritório",
+          "id": "ba0e13ab-7be5-4777-ab12-5c5b0a7747da"
+        },
+        {
+          "name": "Papelaria",
+          "cost": "1000",
+          "description": "Compra de material de escritório",
+          "id": "1e025352-7454-4eb0-8b34-287df8ccb46a"
+        }
+      ],
+      "id": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
+}
