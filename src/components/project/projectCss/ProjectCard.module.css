@@ -37,6 +37,11 @@
     margin-right: 5px;
 }
 
+.category_text .capacitação {
+    background-color: #f0e1f8;
+}
+
+.category_text .infraestrutura,
 .category_text .infra {
     background-color: #ffaebc;
 }

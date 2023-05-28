@@ -24,29 +24,45 @@ export default function Project() {
     // GET PROJECT
     useEffect(() => {
         setTimeout(() => {
-            fetch(`http://localhost:5000/projects/${id}`, {
-                method: 'GET',
-                headers: {
-                    'content-Type': 'application/json'
-                }
-            })
-            .then((resp) => resp.json())
-            .then((data) => {
-                setProject(data)
-                setServices(data.services)
-            })
-            .catch((err) => console.log(err))
+
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+
+                fetch(`http://localhost:5000/projects/${id}`, {
+                    method: 'GET',
+                    headers: {
+                        'content-Type': 'application/json'
+                    }
+                })
+                .then((resp) => resp.json())
+                .then((data) => {
+                    setProject(data)
+                    setServices(data.services)
+                })
+                .catch((err) => console.log(err))
+
+            }else{
+                // USING LOCAL STORAGE
+                // updateCosts()
+                const localProjects = JSON.parse(localStorage.getItem('projects'))
+                const foundProject = localProjects.find(project => project.id === id)
+                setProject(foundProject)
+                setServices(foundProject.services)
+            }
+
         }, 500)
     }, [id])
+
 
     // TOGGLE BUTTON FOR EDIT PROJECT
     function toggleProjectForm() {
         setShowProjectForm(!showProjectForm)
     }
 
+
     // EDIT PROJECT
     function editPost(project) {
         setMessage('')
+
         // budget validation
         if (project.budget < project.cost) {
             setMessage('ERRO: O orçamento não pode ser menor que o custo do projeto!')
@@ -54,27 +70,50 @@ export default function Project() {
             return false
         }
 
-        fetch(`http://localhost:5000/projects/${project.id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-Type': 'application/json'
-            },
-            body: JSON.stringify(project)
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            setProject(data)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+
+            fetch(`http://localhost:5000/projects/${project.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-Type': 'application/json'
+                },
+                body: JSON.stringify(project)
+            })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setProject(data)
+                setShowProjectForm(false)
+                setMessage('Projeto atualizado!')
+                setType('success')
+            })
+            .catch((err) => console.log(err))
+
+        }else{
+            // USING LOCAL STORAGE
+            const localProjects = JSON.parse(localStorage.getItem('projects'))
+            const foundProject = localProjects.find(project => project.id === id)
+
+            foundProject.name = project.name
+            foundProject.budget = project.budget
+            foundProject.category = project.category
+            foundProject.cost = parseFloat(project.cost)
+
+            let newJsonString = JSON.stringify(localProjects)
+            localStorage.setItem('projects', newJsonString)
+
             setShowProjectForm(false)
             setMessage('Projeto atualizado!')
             setType('success')
-        })
-        .catch((err) => console.log(err))
+            setProject(foundProject)
+        }
     }
+
 
     // TOGGLE BUTTON FOR EDIT SERVICE
     function toggleServiceForm() {
         setShowServiceForm(!showServiceForm)
     }
+
 
     // ADD SERVICE
     function createService() {
@@ -88,7 +127,7 @@ export default function Project() {
         const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
 
         // maximun value validation
-        if (newCost >parseFloat(project.budget)) {
+        if (newCost > parseFloat(project.budget)) {
             setMessage('ERRO: Orçamento ultrapassado, verifique o valor do serviço!')
             setType('error')
             setShowServiceForm(false)
@@ -100,21 +139,41 @@ export default function Project() {
         project.cost = newCost
 
         // update project
-        fetch(`http://localhost:5000/projects/${project.id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-Type': 'application/json'
-            },
-            body: JSON.stringify(project)
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+
+            fetch(`http://localhost:5000/projects/${project.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-Type': 'application/json'
+                },
+                body: JSON.stringify(project)
+            })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setMessage('Serviço adicionado com sucesso!')
+                setType('success')
+                setShowServiceForm(false)
+            })
+            .catch((err) => console.log(err))
+
+        }else{
+            // USING LOCAL STORAGE
+            const localProjects = JSON.parse(localStorage.getItem('projects'))
+            const foundProject = localProjects.find(project => project.id === id)
+            
+            foundProject.services = project.services
+            foundProject.cost = parseFloat(project.cost)
+            
+            let newJsonString = JSON.stringify(localProjects)
+            localStorage.setItem('projects', newJsonString)
+
             setMessage('Serviço adicionado com sucesso!')
             setType('success')
             setShowServiceForm(false)
-        })
-        .catch((err) => console.log(err))
+            setServices(foundProject.services)
+        }
     }
+
 
     // REMOVE SERVICE
     function removeService(id, cost) {
@@ -128,21 +187,43 @@ export default function Project() {
         projectUpdated.services = servicesUpdated
         projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
 
-        fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-Type': 'application/json'
-            },
-            body: JSON.stringify(project)
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            setProject(projectUpdated)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+
+            fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-Type': 'application/json'
+                },
+                body: JSON.stringify(project)
+            })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setProject(projectUpdated)
+                setServices(servicesUpdated)
+                setMessage('Serviço removido com sucesso!')
+                setType('success')
+            })
+            .catch((err) => console.log(err))
+
+        }else{
+            // USING LOCAL STORAGE
+            const localProjects = JSON.parse(localStorage.getItem('projects'))
+            
+            for (const service of localProjects) {
+                const serviceFound = service.services.find(service => service.id === id);
+                if (serviceFound) {
+                    service.services.splice(serviceFound, 1)
+                }
+                service.cost = parseFloat(project.cost)
+            }
+            
+            let newJsonString = JSON.stringify(localProjects)
+            localStorage.setItem('projects', newJsonString)
+            
             setServices(servicesUpdated)
             setMessage('Serviço removido com sucesso!')
             setType('success')
-        })
-        .catch((err) => console.log(err))
+        }
     }
 
 

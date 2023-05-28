@@ -5,22 +5,44 @@ import Select from '../form/Select'
 import SubmitButton from '../form/SubmitButton'
 import styles from './projectCss/ProjectForm.module.css'
 
+import internaldb from '../../internaldb.json'
+
+
 export default function ProjectForm({btnText, handleSubmit, projectData}) {
 
     const [categories, setCategories] = useState([])
-    
+
     const [project, setProject] = useState(projectData || {})
 
+
+    function noCategoriesInitial() {
+        if (!localStorage.hasOwnProperty('categories')) {
+            localStorage.setItem('categories', JSON.stringify(internaldb.categories))
+        }
+    }
+
+
     useEffect(() => {
-        fetch('http://localhost:5000/categories', {
-            method: 'GET',
-            headers: {
-                'content-Type': 'application/json'
-            }
-        })
-            .then((resp) => resp.json())
-            .then((data) => setCategories(data))
-            .catch((err) => console.log(err))
+
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                
+            fetch('http://localhost:5000/categories', {
+                method: 'GET',
+                headers: {
+                    'content-Type': 'application/json'
+                }
+            })
+                .then((resp) => resp.json())
+                .then((data) => setCategories(data))
+                .catch((err) => console.log(err))
+
+        }else{
+            // USING LOCAL STORAGE
+            noCategoriesInitial()
+            const localDBCategories = localStorage.getItem('categories')
+            setCategories(JSON.parse(localDBCategories))
+        }
+
     }, [])
 
 
